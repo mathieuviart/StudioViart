@@ -450,11 +450,18 @@ nav {
   padding: 0.4rem 1rem; background: var(--charcoal);
   font-size: 0.62rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand);
 }
+
 .id-visual {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+  width: 100%;
 }
-.id-photo { aspect-ratio: 3/4; background: url('images/Identités/1.jpg') center/cover no-repeat; }
-.id-photo:nth-child(2) { margin-top: 1.5rem; background: url('images/Portraits/4.jpg') center/cover no-repeat; }
+
+.id-photo {
+  aspect-ratio: 3/2;
+  background: url('images/Identités/1.jpg') center/cover no-repeat;
+  width: 100%;
+}
+
+.id-photo { aspect-ratio: 3/2; background: url('images/Identités/1.jpg') center/cover no-repeat; }
 
 /* ════════════════════════════════
    PAGE REPORTAGES
@@ -555,15 +562,6 @@ nav {
   object-fit: contain;
 }
 .gm-item:hover img { transform: scale(1.02); opacity: 0.92; }
-.gm1 { aspect-ratio: 3/4; background: url('images/Portraits/4.jpg') center/cover no-repeat; }
-.gm2 { aspect-ratio: 1/1; background: url('images/Portraits/5.jpg') center/cover no-repeat; }
-.gm3 { aspect-ratio: 4/5; background: url('images/Portraits/6.jpg') top/cover no-repeat; }
-.gm4 { aspect-ratio: 3/4; background: url('images/Corporate/1.jpg') center/cover no-repeat; }
-.gm5 { aspect-ratio: 1/1; background: url('images/Corporate/2.jpg') center/cover no-repeat; }
-.gm6 { aspect-ratio: 3/5; background: url('images/Corporate/3.jpg') center/cover no-repeat; }
-.gm7 { aspect-ratio: 4/3; background: url('images/Corporate/4.jpg') center/cover no-repeat; }
-.gm8 { aspect-ratio: 3/4; background: url('images/Corporate/5.jpg') center/cover no-repeat; }
-.gm9 { aspect-ratio: 1/1; background: url('images/portrait JLV/1.jpg') center/cover no-repeat; }
 
 .galerie-boutique-cta {
   padding: 5rem; background: var(--charcoal); text-align: center;
@@ -707,12 +705,14 @@ footer {
   .formats-grid { grid-template-columns: 1fr; }
 }
 
-/* ── Nouvelles catégories de séances ── */
+/* ── Catégories de séances ── */
 .sb-immobilier  { background: url('images/Immobilier/5.jpg') center/cover no-repeat; }
 .sb-encadrements{ background: url('images/Encadrements/1.jpg') center/cover no-repeat; }
 .sb-reproduction{ background: url('images/Reproduction tableaux/1.jpg') center/cover no-repeat; }
 .sb-occasions   { background: url('images/Occasions/1.jpg') center/cover no-repeat; }
 .sb-scolaires   { background: url('images/Scolaires/1.jpg') center/cover no-repeat; }
+/* ── NOUVEAU : Light painting ── */
+.sb-lightpainting { background: url('images/Lightpainting/1.jpg') center/cover no-repeat; }
 
 
 /* ══ LIGHTBOX ══ */
@@ -956,6 +956,23 @@ footer {
           <span class="seance-arrow">Découvrir</span>
         </div>
       </a>
+      <!-- ── NOUVEAU : Light painting ── -->
+      <a href="#" class="seance-card" onclick="showPage('seances');return false;">
+        <div class="seance-bg sb-lightpainting"></div>
+        <div class="seance-content">
+          <h3>Light painting</h3>
+          <p>L'art de peindre avec la lumière — poses longues et créations lumineuses uniques.</p>
+          <span class="seance-arrow">Découvrir</span>
+        </div>
+      </a>
+      <a href="#" class="seance-card" onclick="showPage('seances');return false;">
+      <div class="seance-bg sb-encadrements"></div>
+      <div class="seance-content">
+        <h3>Encadrements &amp; tirages</h3>
+        <p>Tirages papier, panexpan et encadrements réalisés dans notre atelier à Modane.</p>
+        <span class="seance-arrow">Découvrir</span>
+      </div>
+    </a>
     </div>
   </section>
 
@@ -1014,6 +1031,7 @@ footer {
       <li><a href="#" onclick="showPage('seances');return false;">Photo d'Iris</a></li>
       <li><a href="#" onclick="showPage('seances');return false;">Entreprises</a></li>
       <li><a href="#" onclick="showPage('reportages');return false;">Mariages</a></li>
+      <li><a href="#" onclick="showPage('seances');return false;">Light painting</a></li>
     </ul></div>
     <div class="footer-col"><h4>Galerie &amp; boutique</h4><ul>
       <li><a href="#" onclick="showPage('galerie');return false;">Galerie photos</a></li>
@@ -1029,7 +1047,7 @@ footer {
     </ul></div>
     <div class="footer-bottom">
       <p>© 2026 Studio Viart — Photographie pour entreprises &amp; particuliers</p>
-      <p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36454243525f59405f57444276515b575f5a1855595b">[email&#160;protected]</a></p>
+      <p>04 79 05 07 62 · contact@studio-viart.fr</p>
     </div>
   </footer>
 </div>
@@ -1080,9 +1098,9 @@ footer {
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('seances');return false;">Prestations</a></li><li><a href="#" onclick="showPage('reportages');return false;">Reportages</a></li><li><a href="#" onclick="showPage('galerie');return false;">Galerie</a></li><li><a href="#" onclick="showPage('boutique');return false;">Boutique</a></li><li><a href="#" onclick="showPage('contact');return false;">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#7f0c0b0a1b161009161e0d0b3f18121e1613511c1012"><span class="__cf_email__" data-cfemail="b7c4c3c2d3ded8c1ded6c5c3f7d0dad6dedb99d4d8da">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Samedi 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d3e39382924223b242c3f390d2a202c2421632e2220">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
@@ -1243,21 +1261,21 @@ footer {
       </div>
     </div>
 
-<!-- Matériel photo d'occasion -->
-<div class="seance-row">
-  <div class="seance-row-visual"><div class="seance-row-bg sb-occasions"></div></div>
-  <div class="seance-row-text">
-    <span class="eyebrow">Vente &amp; dépôt-vente</span>
-    <h2>Matériel photo<br><em>neuf &amp; occasion</em></h2>
-    <p>Notre magasin propose des appareils photo, objectifs et jumelles, neufs et d'occasion. Ce que nous n'avons pas en stock est disponible sur commande avec livraison dès le lendemain.</p>
-    <div class="seance-details">
-      <div class="seance-detail">Appareils numériques et argentiques en boutique.</div>
-      <div class="seance-detail">Objectifs et jumelles neufs et d'occasion.</div>
-      <div class="seance-detail">Commande avec livraison le lendemain.</div>
+    <!-- Matériel photo d'occasion -->
+    <div class="seance-row">
+      <div class="seance-row-visual"><div class="seance-row-bg sb-occasions"></div></div>
+      <div class="seance-row-text">
+        <span class="eyebrow">Vente &amp; dépôt-vente</span>
+        <h2>Matériel photo<br><em>neuf &amp; occasion</em></h2>
+        <p>Notre magasin propose des appareils photo, objectifs et jumelles, neufs et d'occasion. Ce que nous n'avons pas en stock est disponible sur commande avec livraison dès le lendemain.</p>
+        <div class="seance-details">
+          <div class="seance-detail">Appareils numériques et argentiques en boutique.</div>
+          <div class="seance-detail">Objectifs et jumelles neufs et d'occasion.</div>
+          <div class="seance-detail">Commande avec livraison le lendemain.</div>
+        </div>
+        <a href="#" class="btn-dark" onclick="showPage('contact');return false;">Renseignements</a>
+      </div>
     </div>
-    <a href="#" class="btn-dark" onclick="showPage('contact');return false;">Renseignements</a>
-  </div>
-</div>
 
     <!-- Photographie scolaire -->
     <div class="seance-row">
@@ -1272,6 +1290,22 @@ footer {
           <div class="seance-detail">Galeries en ligne sécurisées pour les familles.</div>
         </div>
         <a href="#" class="btn-dark" onclick="showPage('contact');return false;">Nous contacter</a>
+      </div>
+    </div>
+
+    <!-- ══ NOUVEAU : Light painting ══ -->
+    <div class="seance-row">
+      <div class="seance-row-visual"><div class="seance-row-bg sb-lightpainting"></div></div>
+      <div class="seance-row-text">
+        <span class="eyebrow">Créations lumineuses</span>
+        <h2>Light painting<br><em>« Peindre avec la lumière »</em></h2>
+        <p>Le light painting est une technique photographique unique qui consiste à « peindre » avec des sources lumineuses durant une longue exposition. Le résultat : des images oniriques et spectaculaires, véritables œuvres d'art lumineux.</p>
+        <div class="seance-details">
+          <div class="seance-detail">Séance en studio ou en extérieur la nuit, sur rendez-vous.</div>
+          <div class="seance-detail">Poses longues et jeux de lumières pour un rendu graphique et artistique.</div>
+          <div class="seance-detail">Portraits, compositions abstraites ou à thème selon vos envies.</div>
+        </div>
+        <a href="#" class="btn-dark" onclick="showPage('contact');return false;">Réserver</a>
       </div>
     </div>
 
@@ -1304,16 +1338,15 @@ footer {
     </div>
     <div class="id-visual">
       <div class="id-photo"></div>
-      <div class="id-photo"></div>
     </div>
   </section>
 
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('accueil');return false;">Accueil</a></li><li><a href="#" onclick="showPage('reportages');return false;">Reportages</a></li><li><a href="#" onclick="showPage('galerie');return false;">Galerie</a></li><li><a href="#" onclick="showPage('contact');return false;">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#1063646574797f667971626450777d71797c3e737f7d"><span class="__cf_email__" data-cfemail="94e7e0e1f0fdfbe2fdf5e6e0d4f3f9f5fdf8baf7fbf9">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Sam 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2b1b6b7a6abadb4aba3b0b682a5afa3abaeeca1adaf">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
@@ -1352,9 +1385,9 @@ footer {
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('seances');return false;">Prestations</a></li><li><a href="#" onclick="showPage('galerie');return false;">Galerie</a></li><li><a href="#" onclick="showPage('contact');return false;">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#f98a8d8c9d90968f90988b8db99e94989095d79a9694"><span class="__cf_email__" data-cfemail="5e2d2a2b3a373128373f2c2a1e39333f3732703d3133">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Sam 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbb8bfbeafa2a4bda2aab9bf8baca6aaa2a7e5a8a4a6">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
@@ -1377,6 +1410,8 @@ footer {
     <button class="gtab" onclick="setGalerieTab(this,'immobilier')">Immobilier</button>
     <button class="gtab" onclick="setGalerieTab(this,'encadrements')">Encadrements</button>
     <button class="gtab" onclick="setGalerieTab(this,'reproduction')">Reproduction de tableaux</button>
+    <!-- ── NOUVEAU onglet ── -->
+    <button class="gtab" onclick="setGalerieTab(this,'lightpainting')">Light painting</button>
   </div>
 
   <div class="galerie-content">
@@ -1399,9 +1434,9 @@ footer {
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('seances');return false;">Prestations</a></li><li><a href="#" onclick="showPage('boutique');return false;">Boutique</a></li><li><a href="#" onclick="showPage('contact');return false;">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#fc8f88899895938a959d8e88bc9b919d9590d29f9391"><span class="__cf_email__" data-cfemail="42313637262b2d342b23303602252f232b2e6c212d2f">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Sam 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a191e1f0e03051c030b181e2a0d070b030644090507">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
@@ -1464,9 +1499,9 @@ footer {
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('seances');return false;">Prestations</a></li><li><a href="#" onclick="showPage('galerie');return false;">Galerie</a></li><li><a href="#" onclick="showPage('contact');return false;">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#53202726373a3c253a32212713343e323a3f7d303c3e"><span class="__cf_email__" data-cfemail="0b787f7e6f62647d626a797f4b6c666a626725686466">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Sam 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b181f1e0f02041d020a191f2b0c060a020745080406">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
@@ -1490,7 +1525,7 @@ footer {
         </div>
         <div class="contact-detail">
           <svg class="contact-detail-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-          <div class="contact-detail-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#e5969190818c8a938c849791a58288848c89cb868a88"><span class="__cf_email__" data-cfemail="97e4e3e2f3fef8e1fef6e5e3d7f0faf6fefbb9f4f8fa">[email&#160;protected]</span></a></div>
+          <div class="contact-detail-text"><strong>Email</strong><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></div>
         </div>
         <div class="contact-detail">
           <svg class="contact-detail-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -1527,6 +1562,7 @@ footer {
             <option>Entreprise / portrait pro</option>
             <option>Mariage / reportage extérieur</option>
             <option>Photos d'identité</option>
+            <option>Light painting</option>
             <option>Autre</option>
           </select>
         </div>
@@ -1543,126 +1579,121 @@ footer {
   <footer>
     <div class="footer-brand"><a href="#" class="nav-logo" onclick="showPage('accueil');return false;">Studio Viart<span>18, avenue Jean Jaurès · 73500 Modane</span></a><p>Photographe en Haute-Maurienne Vanoise. Portraitiste de France. Photo d'iris.</p></div>
     <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#" onclick="showPage('seances');return false;">Prestations</a></li><li><a href="#" onclick="showPage('galerie');return false;">Galerie</a></li><li><a href="#" onclick="showPage('boutique');return false;">Boutique</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="/cdn-cgi/l/email-protection#ccbfb8b9a8a5a3baa5adbeb88caba1ada5a0e2afa3a1"><span class="__cf_email__" data-cfemail="bbc8cfcedfd2d4cdd2dac9cffbdcd6dad2d795d8d4d6">[email&#160;protected]</span></a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:0479050762">04 79 05 07 62</a></li><li><a href="mailto:contact@studio-viart.fr">contact@studio-viart.fr</a></li></ul></div>
     <div class="footer-col"><h4>Horaires</h4><ul><li><a href="#">Mar–Ven 9h–12h / 14h30–19h</a></li><li><a href="#">Sam 9h–12h / 14h30–18h</a></li></ul></div>
-    <div class="footer-bottom"><p>© 2026 Studio Viart — CGU · RGPD</p><p>04 79 05 07 62 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4a7a0a1b0bdbba2bdb5a6a094b3b9b5bdb8fab7bbb9">[email&#160;protected]</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Studio Viart — CGU · RGPD</p><p>04 79 05 07 62 · contact@studio-viart.fr</p></div>
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ╔══════════════════════════════════════════════════════╗
 // ║  📁 CONFIGURATION GALERIE — modifiez ici uniquement  ║
-// ║  Ajouter  : nouvelle ligne  'chemin/photo.jpg',      ║
-// ║  Supprimer: effacez la ligne                         ║
 // ╚══════════════════════════════════════════════════════╝
 
 const galerieData = {
-  // ➕ "portraits" — ajoutez/supprimez des lignes ici
   portraits: [
-    'images/Portraits/4.jpg',       // IMG_0021.jpg
-    'images/Portraits/5.jpg',       // IMG_0038.psd30x40.jpg
-    'images/Portraits/6.jpg',       // _MG_0077.psd 60x60.jpg
-    'images/Portraits/1.jpeg',      // 48801.jpeg
-    'images/Portraits/2.jpeg',      // 793.jpeg
-    'images/Portraits/3.jpeg',      // 811.jpeg
-    'images/Portraits/7.jpeg',      // _MG_0194.jpeg
-    'images/Corporate/1.jpg',       // _MG_0222.psd v1.jpg
-    'images/Corporate/2.jpg',       // daniel 1.jpg
-    'images/Corporate/3.jpg',       // daniel 2.jpg
-    'images/Corporate/4.jpg',       // daniel 3.jpg
-    'images/Corporate/5.jpg',       // daniel 4.jpg
-    'images/portrait JLV/1.jpg',    // portrait.jpg
+    'images/Portraits/4.jpg',
+    'images/Portraits/5.jpg',
+    'images/Portraits/6.jpg',
+    'images/Portraits/1.jpeg',
+    'images/Portraits/2.jpeg',
+    'images/Portraits/3.jpeg',
+    'images/Portraits/7.jpeg',
+    'images/Corporate/1.jpg',
+    'images/Corporate/2.jpg',
+    'images/Corporate/3.jpg',
+    'images/Corporate/4.jpg',
+    'images/Corporate/5.jpg',
+    'images/portrait JLV/1.jpg',
   ],
-  // ➕ "familles" — ajoutez/supprimez des lignes ici
   familles: [
-    'images/Future Maman & Bébé/1.jpg',    // 4801.JPG
-    'images/Future Maman & Bébé/2.jpg',    // IMG_0020.jpg
-    'images/Future Maman & Bébé/3.jpeg',   // IMG_1408.jpeg
-    'images/Future Maman & Bébé/4.jpg',    // IMG_1431.jpg
-    'images/Future Maman & Bébé/5.jpg',    // _MG_0060.jpg
-    'images/Future Maman & Bébé/6.jpg',    // _MG_0210.jpg
+    'images/Future Maman & Bébé/1.jpg',
+    'images/Future Maman & Bébé/2.jpg',
+    'images/Future Maman & Bébé/3.jpeg',
+    'images/Future Maman & Bébé/4.jpg',
+    'images/Future Maman & Bébé/5.jpg',
+    'images/Future Maman & Bébé/6.jpg',
   ],
-  // ➕ "mariages" — ajoutez/supprimez des lignes ici
   mariages: [
-    'images/Mariage/1.jpg',   // IMG_0101.jpg
-    'images/Mariage/2.jpg',   // IMG_0186.jpg
-    'images/Mariage/3.jpg',   // IMG_0579.jpg
-    'images/Mariage/4.jpg',   // IMG_0609.jpg
-    'images/Mariage/5.jpg',   // IMG_0624.jpg
-    'images/Mariage/6.jpg',   // IMG_1189.jpg
-    'images/Mariage/7.jpg',   // IMG_1290.jpg
-    'images/Mariage/8.jpg',   // IMG_1372.jpg
+    'images/Mariage/1.jpg',
+    'images/Mariage/2.jpg',
+    'images/Mariage/3.jpg',
+    'images/Mariage/4.jpg',
+    'images/Mariage/5.jpg',
+    'images/Mariage/6.jpg',
+    'images/Mariage/7.jpg',
+    'images/Mariage/8.jpg',
   ],
-  // ➕ "iris" — ajoutez/supprimez des lignes ici
   iris: [
-    'images/Iris/1.jpg',   // montage 30x45.jpg
-    'images/Iris/2.jpg',   // montage 60x60.jpg
-    'images/Iris/3.jpg',   // montage v1 60x60 6 yeux.jpg
+    'images/Iris/1.jpg',
+    'images/Iris/2.jpg',
+    'images/Iris/3.jpg',
   ],
-  // ➕ "entreprise" — ajoutez/supprimez des lignes ici
   entreprise: [
-    'images/Entreprise/2.jpg',    // IMG_0024.jpg
-    'images/Entreprise/3.jpg',    // IMG_0030.jpg
-    'images/Entreprise/4.jpg',    // IMG_0032.jpg
-    'images/Entreprise/5.jpg',    // IMG_0044.jpg
-    'images/Entreprise/6.jpg',    // IMG_0069.jpg
-    'images/Entreprise/7.jpg',    // IMG_0091.jpg
-    'images/Entreprise/8.jpg',    // IMG_0099.jpg
-    'images/Entreprise/9.jpg',    // IMG_0114.jpg
-    'images/Entreprise/10.jpg',   // IMG_0368.jpg
-    'images/Entreprise/11.jpg',   // IMG_0397.jpg
-    'images/Entreprise/12.jpg',   // IMG_0503.jpg
-    'images/Entreprise/13.jpg',   // _MG_0011.jpg
-    'images/Entreprise/14.jpg',   // _MG_0072.jpg
-    'images/Entreprise/15.jpg',   // _MG_0085.jpg
-    'images/Entreprise/16.jpg',   // _MG_0145.jpg
-    'images/Entreprise/17.jpg',   // _MG_0234.jpg
-    'images/Entreprise/18.jpg',   // _MG_0295.jpg
-    'images/Entreprise/19.jpg',   // collection vanoise canettes 44cl.jpg
-    'images/Entreprise/20.jpg',   // creme brulée échappée.jpg
-    'images/Entreprise/21.jpg',   // groupe 50x75.jpg
-    'images/Entreprise/22.png',   // pack 33.png
-    'images/Entreprise/23.jpg',   // pack shot vieux four.jpg
-    'images/Entreprise/1.jpg',    // 10X16 FINAL.jpg
+    'images/Entreprise/2.jpg',
+    'images/Entreprise/3.jpg',
+    'images/Entreprise/4.jpg',
+    'images/Entreprise/5.jpg',
+    'images/Entreprise/6.jpg',
+    'images/Entreprise/7.jpg',
+    'images/Entreprise/8.jpg',
+    'images/Entreprise/9.jpg',
+    'images/Entreprise/10.jpg',
+    'images/Entreprise/11.jpg',
+    'images/Entreprise/12.jpg',
+    'images/Entreprise/13.jpg',
+    'images/Entreprise/14.jpg',
+    'images/Entreprise/15.jpg',
+    'images/Entreprise/16.jpg',
+    'images/Entreprise/17.jpg',
+    'images/Entreprise/18.jpg',
+    'images/Entreprise/19.jpg',
+    'images/Entreprise/20.jpg',
+    'images/Entreprise/21.jpg',
+    'images/Entreprise/22.png',
+    'images/Entreprise/23.jpg',
+    'images/Entreprise/1.jpg',
   ],
-  // ➕ "immobilier" — ajoutez/supprimez des lignes ici
   immobilier: [
-    'images/Immobilier/1.jpg',   // IMG_0068.jpg
-    'images/Immobilier/2.jpg',   // IMG_0080.jpg
-    'images/Immobilier/3.jpg',   // IMG_7167.jpg
-    'images/Immobilier/4.jpg',   // _MG_0099.jpg
-    'images/Immobilier/5.jpg',   // _MG_0126.jpg
-    'images/Immobilier/6.jpg',   // _MG_0141.jpg
+    'images/Immobilier/1.jpg',
+    'images/Immobilier/2.jpg',
+    'images/Immobilier/3.jpg',
+    'images/Immobilier/4.jpg',
+    'images/Immobilier/5.jpg',
+    'images/Immobilier/6.jpg',
   ],
-  // ➕ "encadrements" — ajoutez/supprimez des lignes ici
   encadrements: [
-    'images/Encadrements/1.jpg',   // _MG_0006.JPG
+    'images/Encadrements/1.jpg',
   ],
-  // ➕ "reproduction" — ajoutez/supprimez des lignes ici
   reproduction: [
-    'images/Reproduction tableaux/1.jpg',   // IMG_0944.JPG
-    'images/Reproduction tableaux/2.jpg',   // IMG_0945.JPG
-    'images/Reproduction tableaux/3.jpg',   // IMG_0947.JPG
-    'images/Reproduction tableaux/4.jpg',   // IMG_0948.JPG
-    'images/Reproduction tableaux/5.jpg',   // IMG_0949.JPG
+    'images/Reproduction tableaux/1.jpg',
+    'images/Reproduction tableaux/2.jpg',
+    'images/Reproduction tableaux/3.jpg',
+    'images/Reproduction tableaux/4.jpg',
+    'images/Reproduction tableaux/5.jpg',
   ],
-
+  // ── NOUVEAU : Light painting ──
+  lightpainting: [
+    'images/Lightpainting/1.jpg',
+    'images/Lightpainting/2.jpg',
+    'images/Lightpainting/3.jpg',
+    'images/Lightpainting/4.jpg',
+  ],
 };
 
 const galerieIntros = {
-  portraits:    "Portraits réalisés dans mon studio à Modane et séances corporate.",
-  familles:     "Séances chaleureuses avec enfants et bébés — des souvenirs pour toute la vie.",
-  mariages:     "Reportages de mariage en Haute Maurienne — des instants sincères et immortalisés.",
-  iris:         "Collection d'iris transformés en œuvres d'art — chaque œil est unique.",
-  entreprise:   "Photos de produits, d'ateliers, de locaux et d'événements professionnels.",
-  immobilier:   "Valorisez vos biens immobiliers avec des photos soignées et lumineuses.",
-  encadrements: "Tirages d'art, panexpan et toiles réalisés dans mon atelier à Modane.",
-  reproduction: "Reproductions fidèles de tableaux et d'œuvres d'art.",
-  occasions:    "Matériel photographique : appareils, objectifs, jumelles et accessoires.",
-  identites:    "Photos d'identité agréées ANTS — carte d'identité, passeport, VISA.",
+  portraits:     "Portraits réalisés dans mon studio à Modane et séances corporate.",
+  familles:      "Séances chaleureuses avec enfants et bébés — des souvenirs pour toute la vie.",
+  mariages:      "Reportages de mariage en Haute Maurienne — des instants sincères et immortalisés.",
+  iris:          "Collection d'iris transformés en œuvres d'art — chaque œil est unique.",
+  entreprise:    "Photos de produits, d'ateliers, de locaux et d'événements professionnels.",
+  immobilier:    "Valorisez vos biens immobiliers avec des photos soignées et lumineuses.",
+  encadrements:  "Tirages d'art, panexpan et toiles réalisés dans mon atelier à Modane.",
+  reproduction:  "Reproductions fidèles de tableaux et d'œuvres d'art.",
+  lightpainting: "Light painting — l'art de peindre avec la lumière. Poses longues et créations lumineuses réalisées en studio ou en extérieur.",
 };
 
-// ── Lightbox ─────────────────────────────────────────────
+// ── Lightbox ──────────────────────────────────────────
 let lbImages = [];
 let lbIndex  = 0;
 
@@ -1706,9 +1737,8 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft')  { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; lbRender(); }
 });
 
-// ── Galerie ──────────────────────────────────────────────
+// ── Galerie ──────────────────────────────────────────
 let galerieLoaded = false;
-
 
 function setGalerieTab(btn, tab) {
   document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
@@ -1732,14 +1762,13 @@ function setGalerieTab(btn, tab) {
   });
 }
 
-// ── Navigation ───────────────────────────────────────────
+// ── Navigation ───────────────────────────────────────
 function showPage(id, linkEl) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + id);
   if (target) { target.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   if (linkEl) linkEl.classList.add('active');
-  // Initialise la galerie seulement quand on y navigue
   if (id === 'galerie' && !galerieLoaded) {
     const firstTab = document.querySelector('.gtab');
     if (firstTab) setGalerieTab(firstTab, 'portraits');
