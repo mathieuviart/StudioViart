@@ -282,25 +282,9 @@ nav {
 /* Iris spotlight */
 .iris-spotlight { display: grid; grid-template-columns: 1fr 1fr; }
 .iris-visual {
-  background: var(--charcoal); display: flex; align-items: center; justify-content: center;
-  padding: 5rem; min-height: 60vh; position: relative; overflow: hidden;
-}
-.iris-visual::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, rgba(80,70,140,0.15) 0%, transparent 70%);
-}
-.iris-circle {
-  width: 280px; height: 280px; border-radius: 50%;
   background: url('images/Iris/1.jpg') center/cover no-repeat;
-  box-shadow: 0 0 80px rgba(90,80,140,0.45), inset 0 0 80px rgba(0,0,0,0.55);
-  position: relative; flex-shrink: 0;
+  min-height: 60vh;
 }
-.iris-circle::before {
-  content: ''; position: absolute; inset: 22%;
-  background: radial-gradient(circle, #0E0E18 0%, #1A1A28 60%, transparent 100%);
-  border-radius: 50%;
-}
-.iris-circle::after { content: ''; position: absolute; inset: -14px; border-radius: 50%; border: 1px solid rgba(181,144,106,0.18); }
 .iris-text {
   padding: 5rem; background: var(--sand-light);
   display: flex; flex-direction: column; justify-content: center;
@@ -332,9 +316,9 @@ nav {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem;
 }
 .bv-item { aspect-ratio: 2/3; border-radius: 0; }
-.bv1 { background: linear-gradient(145deg, #C8A87A, #8A6042); }
-.bv2 { background: linear-gradient(145deg, #8A9884, #5A6854); margin-top: 1.5rem; }
-.bv3 { background: linear-gradient(145deg, #9898C8, #484878); }
+.bv1 { background: url('images/Gallery/3.jpg') center/cover no-repeat; }
+.bv2 { background: url('images/Gallery/4.jpg') center/cover no-repeat; margin-top: 1.5rem; }
+.bv3 { background: url('images/Gallery/5.jpg') center/cover no-repeat; }
 
 /* ════════════════════════════════
    PAGE À PROPOS
@@ -984,9 +968,7 @@ footer {
 
   <!-- Iris spotlight -->
   <section class="iris-spotlight">
-    <div class="iris-visual">
-      <div class="iris-circle"></div>
-    </div>
+    <div class="iris-visual"></div>
     <div class="iris-text">
       <span class="eyebrow">Nouveau à Modane</span>
       <h2>Votre oeil,<br><em>une oeuvre d'art</em></h2>
